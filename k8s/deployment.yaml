@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-node-api
+  template:
+    metadata:
+      labels:
+        app: my-node-api
+    spec:
+      containers:
+      - name: my-node-api
+        image: my-node-api:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000

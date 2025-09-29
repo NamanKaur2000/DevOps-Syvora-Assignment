@@ -1,0 +1,8 @@
+replicaCount: 2
+image:
+  repository: my-node-api
+  tag: latest
+  pullPolicy: IfNotPresent
+service:
+  type: NodePort
+  port: 3000
